@@ -2,52 +2,45 @@ import java.math.BigDecimal;
 import java.util.*;
 
 public class AccountController {
-    private String name;
-    private int accnum,accnum2,accnum3;
-    private double balance=0;
-    private double amount;
-    private  double money;
-    private String account;
-    Account accountobj= new Account();
+
     List<Account> accounts=new ArrayList<>();
-    Scanner Ba=new Scanner(System.in);
 
-    public void showbalance(){
-        System.out.println("Choose Your Account :");
-        account=Ba.nextLine();
-        System.out.println("Accounts :"+BigDecimal.valueOf(Long.parseLong(account)));
+
+    public BigDecimal showBalance(String accountnumber){
+        for (Account account:accounts){
+            if (account.getAccountnumber().equals(accountnumber)){
+                return Account.getBalance();
+            }
+
+        }
+       return null ;
     }
 
 
 
-    public void transfer(){
-        System.out.println("Enter the Origin Account Number:");
-        accnum=Ba.nextInt();
-        System.out.println("Enter the Destination Account Number:");
-        accnum2=Ba.nextInt();
-        System.out.println("Enter Your Desired Amount :");
-        amount=Ba.nextDouble();
-
-    if(amount<balance){
-        balance=balance-amount;
-    }
-    else {
-        System.out.println("You Do not Have Anough Balance!!!");
-    }
+    public void transfer(String oriaccount,String desaccount,BigDecimal amount){
+    String accountdata=null;
+    for (Account account:accounts){
+        if (account.getAccountnumber().equals(oriaccount)){
+            accountdata=oriaccount;
+        }
+        else if (amount ==> Account.getBalance()){
+            System.out.println("You dont have enough balance !!");
+        }
+        else{
+            BigDecimal money= ;
+        }
     }
 
-
-
-    public void deposit(){
-    System.out.println("Enter Your Account Number :");
-    accnum3=Ba.nextInt();
-    System.out.println("Enter The Amount :");
-    money=Ba.nextDouble();
-    balance=balance+money;
     }
 
-    public void createnewaccount(){
-        accounts.add(accountobj);
+
+
+    public void createnewaccount(String Account){
+        Account acobj=new Account();
+        accounts.add(acobj);
+        acobj.setBalance(BigDecimal.ZERO);
+
     }
 
 

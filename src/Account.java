@@ -3,15 +3,25 @@ import java.util.Scanner;
 
 public class Account {
 
-    public void getdata()
+    String accountnumber;
+    static BigDecimal balance;
 
-    {
-        Scanner ac = new Scanner(System.in);
-        System.out.println("Enter Your Account Number...  ");
-        String number = ac.next();
-        System.out.println("And Your Balance...");
-        BigDecimal balance = ac.nextBigDecimal();
+    public String getAccountnumber(){
+        return accountnumber;
     }
 
+    public void setAccountNumber(String accountnumber) {
 
+        this.accountnumber = accountnumber;
+         Math.random();
+    }
+
+    public static BigDecimal getBalance() {
+        return  balance;
+    }
+
+    public void setBalance(BigDecimal balance) {
+        
+        this.balance = balance;
+    }
 }
