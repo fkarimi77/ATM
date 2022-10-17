@@ -3,12 +3,11 @@ import java.util.Scanner;
 
 public class Display {
 
-
     public void showMenu() {
         Scanner ch = new Scanner(System.in);
         int choice = ch.nextInt();
         AccountController obj= new AccountController();
-        Account acobj= new Account();
+
 
         do {
             System.out.println("Please Choose Your Action...");
@@ -39,7 +38,7 @@ public class Display {
                     break;
                 case 3:
                     String cn="Karimi";
-                    obj.createnewaccount(cn);
+                    obj.createNewAccount(cn);
                 case 4:
                     showMenu();
                     break;

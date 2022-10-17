@@ -18,25 +18,36 @@ public class AccountController {
 
 
 
-    public void transfer(String oriaccount,String desaccount,BigDecimal amount){
-    String accountdata=null;
-    for (Account account:accounts){
-        if (account.getAccountnumber().equals(oriaccount)){
-            accountdata=oriaccount;
+    public void transfer(String sourceAccountNumber,String destinationAccountNumber,BigDecimal amount){
+        String sourceAccount = null;
+        String destinationAccount= null;
+        BigDecimal transferAmount=null;
+        for(Account account:accounts){
+            if (account.getAccountnumber().equals(sourceAccountNumber)){
+                sourceAccount=sourceAccountNumber;
+            }
+             if(account.getAccountnumber().equals(destinationAccountNumber)) {
+                destinationAccount=sourceAccountNumber;
+
+            }
+
+             if(account.getBalance().equals(amount)){
+                transferAmount=amount;
+
+            }
+            else{
+                throw new RuntimeException("You dont have enough money..!");
+            }
         }
-        else if (amount ==> Account.getBalance()){
-            System.out.println("You dont have enough balance !!");
-        }
-        else{
-            BigDecimal money= ;
-        }
+
+
     }
 
-    }
 
 
 
-    public void createnewaccount(String Account){
+
+    public void createNewAccount(String accountNumber){
         Account acobj=new Account();
         accounts.add(acobj);
         acobj.setBalance(BigDecimal.ZERO);

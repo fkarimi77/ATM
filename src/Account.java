@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Account {
 
     String accountnumber;
-    static BigDecimal balance;
+    BigDecimal balance;
 
     public String getAccountnumber(){
         return accountnumber;
@@ -16,7 +16,7 @@ public class Account {
          Math.random();
     }
 
-    public static BigDecimal getBalance() {
+    public  BigDecimal getBalance() {
         return  balance;
     }
 
